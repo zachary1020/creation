@@ -1,3 +1,2 @@
-# creation
-
-# a template project for springmvc web application 
+## creation
+ a template project for springmvc web application 
