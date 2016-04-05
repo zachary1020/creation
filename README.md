@@ -1,2 +1,2 @@
 ## creation
- a template project for springmvc web application 
+*a template project for 'springmvc' web application 
