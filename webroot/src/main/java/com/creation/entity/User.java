@@ -1,6 +1,5 @@
 package com.creation.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,6 +12,26 @@ public class User {
 	@Id
 	@GeneratedValue
 	private int id;
+	
+	private String name;
+
+	private String password;
+	
+	private String address;
+
+	private String postCode;
+
+	private String email;
+
+	private String homephone;
+
+	private String cellphone;
+
+	private String officephone;
+
+	private String type;
+
+	private String workNo;
 	
 	public int getId() {
 		return id;
@@ -101,25 +120,6 @@ public class User {
 	public void setWorkNo(String workNo) {
 		this.workNo = workNo;
 	}
-	
-	private String name;
 
-	private String password;
-	
-	private String address;
-
-	private String postCode;
-
-	private String email;
-
-	private String homephone;
-
-	private String cellphone;
-
-	private String officephone;
-
-	private String type;
-
-	private String workNo;
 
 }
