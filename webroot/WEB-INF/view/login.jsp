@@ -26,10 +26,10 @@
                             </div>
                             <form action="login.html" method="post">
                                 <div class="control">
-                                    <input type="text" class="form-control" name="name" value="admin@gmail.com" />
+                                    <input type="text" class="form-control" name="name" placeholder="请输入用户名" />
                                 </div>
                                 <div class="control">
-                                    <input type="password" class="form-control" name="password" value="123456" />
+                                    <input type="password" class="form-control" name="password" placeholder="密码" />
                                 </div>
                                 <div class="login-button text-center">
                                     <input type="submit" class="btn btn-primary" value="Login">
@@ -37,7 +37,8 @@
                             </form>
                         </div>
                         <div class="login-footer">
-                            <span class="text-right"><a href="#" class="color-white">Forgot password?</a></span>
+                        	<span class="text-left" ><a href="register.html" class="color-white">注册</a></span>
+                            <span class="text-right"><a href="#" class="color-white">忘记密码?</a></span>
                         </div>
                     </div>
                 </div>
@@ -45,5 +46,16 @@
         </div>
     </div>   
 </body>
+<script type="text/javascript">
 
+	window.onload = function(){
+		var result = '<%= request.getAttribute("result")%>';
+		if(result == "null" || result == ""){
+			return;	
+		}else{
+			alert(result);
+		}		
+	}
+	
+</script>
 </html>

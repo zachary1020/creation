@@ -9,13 +9,17 @@
     	<filter-class>com.creation.util.SimpleLoginFilter</filter-class>
     	<init-param>
     		<param-name>disfilter</param-name>
-    		<param-value>.css;.js;.jpg;login.html</param-value>
+    		<param-value>.css;.woff2;.woff;.ttf;.js;.map;.jpg;.jpeg;.png;login.html;register.html;register</param-value>
     	</init-param>	
     </filter> 
     
 	<filter>
 	    <filter-name>openSessionInViewFilter</filter-name>
 	    <filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+	    <init-param>
+	    	<param-name>singleSession</param-name>
+	    	<param-value>false</param-value>
+	    </init-param>
 	</filter>
 	
   	<filter-mapping>

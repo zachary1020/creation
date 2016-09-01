@@ -40,6 +40,7 @@ public class SimpleLoginFilter implements Filter {
 	
 		if(username == null){
 			//requst.getRequestDispatcher("/login").forward(requst, response);
+			System.out.println(reqURL);
 			((HttpServletResponse)response).sendRedirect(req.getServletContext().getContextPath()+"/login.html");
 			return;
 		}else{

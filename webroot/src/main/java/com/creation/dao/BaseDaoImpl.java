@@ -1,12 +1,13 @@
 package com.creation.dao;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class BaseDaoImpl implements BaseDao{
 	
 	@Autowired
@@ -17,10 +18,15 @@ public class BaseDaoImpl implements BaseDao{
 			
 		return template.get(clazz, id);
 	}
+	
+	@SuppressWarnings("unchecked")
+	public <T> List<T> findByTemplate(T t){
+		
+		return template.findByExample(t);
+	}
 
 	@Override
-	public Serializable save(Object entity) {
-		
+	public Serializable saveObject(Object entity) {
 		return template.save(entity);
 	}
 

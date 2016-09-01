@@ -107,7 +107,7 @@
 	
 	<aop:config>
 		
-			<aop:pointcut expression="execution ( public * com.cn.shop.service..*.*(..))" id="bussinessService"/>
+			<aop:pointcut expression="execution ( public * com.creation.dao..*.*(..))" id="bussinessService"/>
 	
 			<aop:advisor pointcut-ref="bussinessService" advice-ref="txAdvice"/>
 			
@@ -115,13 +115,14 @@
 	
 	<tx:advice id="txAdvice" transaction-manager="txManager">
 	  <tx:attributes>
-	  <tx:method name="get*" read-only="true" />
-	  <tx:method name="next*" propagation ="REQUIRED"/>
-	   <tx:method name="login*" propagation ="REQUIRED"/>
-	   <tx:method name="generate*" propagation ="REQUIRED"/>
-	   <tx:method name="add*" propagation ="REQUIRED"/>
-	   <tx:method name="delete*" propagation ="REQUIRED"/>
-	   <tx:method name="Update*" propagation ="REQUIRED"/>
+	  <tx:method name="get*" 	   read-only="true"  propagation ="REQUIRED"/>
+	  <tx:method name="find*" 	   read-only="true"  propagation ="REQUIRED"/>
+	  <tx:method name="next*" 	   read-only="true"  propagation ="REQUIRED"/>	   
+	  <tx:method name="generate*"  read-only="false" propagation ="REQUIRED"/>
+	  <tx:method name="add*" 	   read-only="false" propagation ="REQUIRED"/>
+	  <tx:method name="delete*"    read-only="false" propagation ="REQUIRED"/>
+	  <tx:method name="Update*"    read-only="false" propagation ="REQUIRED"/>
+	  <tx:method name="save*" 	   read-only="false" rollback-for="Exception" propagation="REQUIRED"/>
 	  </tx:attributes>
 	</tx:advice>
 	
